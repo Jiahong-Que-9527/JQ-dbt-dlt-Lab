@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_currencies
+    description: "Currency dimension: code and full name for the 5 supported currencies."
+    columns:
+      - name: currency_code
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values: ['USD', 'GBP', 'CHF', 'JPY', 'CNY']
+
+  - name: fct_daily_rates
+    description: "Daily EUR-based exchange rates with currency name and day-over-day rate change."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - rate_date
+              - currency
+    columns:
+      - name: currency
+        tests:
+          - not_null
+      - name: rate
+        tests:
+          - not_null

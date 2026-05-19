@@ -1,0 +1,7 @@
+dlt_dbt_sandbox:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/sandbox.duckdb
+      threads: 4

@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw_ecb
+    schema: raw_ecb
+    description: "Raw ECB exchange rate data loaded by dlt from the Frankfurter API."
+    tables:
+      - name: daily_rates
+        description: "Daily EUR-based exchange rates in long format (one row per date/currency)."
+        columns:
+          - name: date
+            tests:
+              - not_null
+          - name: currency
+            tests:
+              - not_null
+
+      - name: currencies_meta
+        description: "Static reference table of supported currency codes and full names."
+        columns:
+          - name: code
+            tests:
+              - not_null
+              - unique

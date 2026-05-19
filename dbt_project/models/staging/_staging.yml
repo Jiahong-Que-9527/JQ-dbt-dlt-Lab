@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_ecb_rates
+    description: "Staged daily EUR-based exchange rates with typed columns and dlt load metadata."
+    columns:
+      - name: rate_date
+        tests:
+          - not_null
+      - name: currency
+        tests:
+          - not_null
+      - name: rate
+        tests:
+          - not_null

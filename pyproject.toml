@@ -1,0 +1,16 @@
+[project]
+name = "dlt-dbt-sandbox"
+version = "0.1.0"
+description = "Learning sandbox for dlt + dbt on DuckDB"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "dlt[duckdb]>=1.0",
+    "dbt-core>=1.7",
+    "dbt-duckdb>=1.7",
+    "requests>=2.31",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.5",
+]

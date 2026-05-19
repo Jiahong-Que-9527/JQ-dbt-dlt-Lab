@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.python-version
+
+# DuckDB data file
+data/*.duckdb
+data/*.duckdb.wal
+
+# dbt artifacts
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Local IDE / dbt user config
+.claude/
+dbt_project/.user.yml
+
+# OS
+.DS_Store
