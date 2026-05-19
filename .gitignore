@@ -12,6 +12,16 @@ dbt_project/target/
 dbt_project/dbt_packages/
 dbt_project/logs/
 
+# dlt local config & runtime
+.dlt/secrets.toml
+.dlt/config.toml
+.dlt/pipelines/
+~/.dlt/
+*.dlt/
+
+# Notebook outputs
+experiments/.ipynb_checkpoints/
+
 # Local IDE / dbt user config
 .claude/
 dbt_project/.user.yml

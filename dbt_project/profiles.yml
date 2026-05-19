@@ -5,3 +5,12 @@ dlt_dbt_sandbox:
       type: duckdb
       path: ../data/sandbox.duckdb
       threads: 4
+      schema: main
+    # "prod-like" target — uses a separate schema in the same DuckDB file so you can
+    # practice `dbt run --target prod` without touching the dev tables. In a real shop
+    # this would point to a Snowflake/BQ/Postgres account, not just a different schema.
+    prod:
+      type: duckdb
+      path: ../data/sandbox.duckdb
+      threads: 4
+      schema: main_prod

@@ -1,0 +1,7 @@
+currency_code,region,is_g10
+USD,North America,true
+GBP,Europe,true
+CHF,Europe,true
+JPY,Asia,true
+CNY,Asia,false
+AUD,Oceania,true

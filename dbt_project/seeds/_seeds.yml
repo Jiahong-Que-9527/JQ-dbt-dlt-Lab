@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: currency_regions
+    description: "Manually maintained currency-to-region mapping. Loaded with `dbt seed`."
+    config:
+      column_types:
+        currency_code: varchar
+        region: varchar
+        is_g10: boolean
+    columns:
+      - name: currency_code
+        tests:
+          - not_null
+          - unique
