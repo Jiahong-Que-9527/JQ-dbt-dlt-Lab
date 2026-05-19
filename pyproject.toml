@@ -13,4 +13,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ruff>=0.5",
+    "jupyterlab>=4.0",
+    "ipykernel>=6.0",
+    "pandas>=2.0",
 ]

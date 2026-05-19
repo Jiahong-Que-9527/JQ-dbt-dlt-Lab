@@ -1,4 +1,4 @@
-.PHONY: install deps ingest transform test build docs all clean reset
+.PHONY: install deps ingest transform test build docs lab all clean reset
 
 install:		## Install dependencies via uv
 	uv sync
@@ -20,6 +20,9 @@ build:			## dbt build = run + test in dependency order
 
 docs:			## Generate and serve dbt docs (lineage graph)
 	cd dbt_project && DBT_PROFILES_DIR=. uv run dbt docs generate && DBT_PROFILES_DIR=. uv run dbt docs serve
+
+lab:			## Launch JupyterLab for experiments/ notebooks
+	uv run jupyter lab --notebook-dir=experiments
 
 all: ingest build	## Full pipeline: ingest then transform+test
 
